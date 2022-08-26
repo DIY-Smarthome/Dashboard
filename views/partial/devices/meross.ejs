@@ -1,0 +1,34 @@
+<div class="meross">
+    <div class="meross_header">
+        <h3><%= device_name %></h3>
+        <h4><%= device_type %></h4>
+        <h5>Location: <%= device_location %></h5>
+    </div>
+    <div class="meross_outlet">
+        <% for (var i =1; i <=outlet_count;  i++ ) { %>
+            <button class="outlet_button" onclick="changeOutletStatus('<%= device_id %>', '<%= i %>')">
+                <p><%=device_outlet['outlet_'+i]['name']%></p>
+                <img id="outlet_<%= i %>" src="/resource/pic/outlet_red.png" alt="Outlet_pic" height="100" width="100">
+            </button>
+            <script>
+                watchOutletStatus("<%= device_id %>", "<%= i %>");
+                setInterval(function() {
+                    watchOutletStatus("<%= device_id %>", "<%= i %>");
+                }, 4000);
+            </script>
+        <% } %>
+    </div>
+    <% if (device_monitor['available'] == true) { %>
+    <div class="meross_monitor">
+        <% for (var i =1; i <=monitor_count;  i++ ) { %>
+            <canvas id="monitor_<%= i %>"></canvas>
+            <script>
+                setCurrentUsage("monitor_<%= i %>");
+                setInterval(function() {
+                    watchCurrentUsage();
+                }, 4000);
+            </script>
+        <% } %>
+    </div>
+    <% } %>
+</div>

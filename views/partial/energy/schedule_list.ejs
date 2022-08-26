@@ -1,0 +1,40 @@
+<%
+day_array = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+%>
+<div class="schedule_list">
+    <p><%= outlet_name %></p>
+    <% for (var i = 0; i <= 6;  i++) { %>
+        <div class="single_schedule">
+            <label class="select_label_from" for="<%= outlet_id %>_<%= day_array[i] %>_from"><%= day_array[i] %> from:</label>
+            <select id="<%= outlet_id %>_<%= day_array[i] %>_from">
+                <% for (var j = 0; j <= 23;  j++) { 
+                    if (j < 10) { %>
+                        <option value="0<%= j %>:00">0<%= j %>:00</option>
+                        <option value="0<%= j %>:15">0<%= j %>:15</option>
+                        <option value="0<%= j %>:30">0<%= j %>:30</option>
+                        <option value="0<%= j %>:45">0<%= j %>:45</option>
+                    <% } else { %>
+                        <option value="<%= j %>:00"><%= j %>:00</option>
+                        <option value="<%= j %>:15"><%= j %>:15</option>
+                        <option value="<%= j %>:30"><%= j %>:30</option>
+                        <option value="<%= j %>:45"><%= j %>:45</option>
+                <% } } %>
+            </select>
+            <label class="select_label_to" for="<%= outlet_id %>_<%= day_array[i] %>_to">to:</label>
+            <select id="<%= outlet_id %>_<%= day_array[i] %>_to">
+                <% for (var j =0; j <=23;  j++ ) { 
+                    if (j < 10) { %>
+                        <option value="0<%= j %>:00">0<%= j %>:00</option>
+                        <option value="0<%= j %>:15">0<%= j %>:15</option>
+                        <option value="0<%= j %>:30">0<%= j %>:30</option>
+                        <option value="0<%= j %>:45">0<%= j %>:45</option>
+                    <% } else { %>
+                        <option value="<%= j %>:00"><%= j %>:00</option>
+                        <option value="<%= j %>:15"><%= j %>:15</option>
+                        <option value="<%= j %>:30"><%= j %>:30</option>
+                        <option value="<%= j %>:45"><%= j %>:45</option>
+                <% } }%>
+            </select>
+        </div>
+    <% } %>
+</div>

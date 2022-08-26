@@ -1,0 +1,102 @@
+<%
+    meross_4port = {
+        device_name:"Meross",
+        device_type:"4-Port Power Strip",
+        device_location:"Living Room",
+        device_id:0,
+        options: {
+            space_1:{
+                space_type: "switch_button",
+                options: {
+                    space_id: 1,
+                    name: "Outlet 1 (PC)"
+                }
+            },
+            space_2:{
+                space_type: "switch_button",
+                options: {
+                    space_id: 2,
+                    name: "Outlet 2 (Charger)"
+                }
+            },
+            space_3:{
+                space_type: "switch_button",
+                options: {
+                    space_id: 3,
+                    name: "Outlet 3 (Monitor)"
+                }
+            },
+            space_4:{
+                space_type: "switch_button",
+                options: {
+                    space_id: 4,
+                    name: "Outlet 4 (Monitor)"
+                }
+            }
+        }
+    }
+
+    meross_single = {
+        device_name:"Meross",
+        device_type:"Smart Power Outlet",
+        device_location:"Kitchen",
+        device_id:1,
+        options: {
+            space_1:{
+                space_type: "switch_button",
+                options: {
+                    space_id: 1,
+                    name: "Outlet (Coffee Machine)"
+                }
+                
+            },
+            space_2:{
+                space_type: "numeric_display",
+                options: {
+                    space_id: 2,
+                    name: "Current Usage",
+                    value_currency: "W"
+                }
+            },
+            space_3:{
+                disable:true
+            },
+            space_4:{
+                disable:true
+            }
+        }
+    }
+
+    options_dummy = {
+        space_1:{
+            disable:true
+        },
+        space_2:{
+            disable:true
+        },
+        space_3:{
+            disable:true
+        },
+        space_4:{
+            disable:true
+        }
+    }
+%>
+<%- include('./partial/header', {style:"home", minimize:nav}) %>
+<main>
+    <%- include('./partial/navbar', {set_active:"home", minimize:nav}); %>
+    <div class="content_wrapper">
+        <script src="/resource/js/home_function.js"></script>
+        <div class="content">
+            <%- include('./partial/module', meross_4port); %>
+            <%- include('./partial/module', meross_single); %>
+            <% for (var i =2; i <=10;  i++ ) { %>
+                    <%- include('./partial/module', {device_name:"Dummy", device_type:"Dummy", device_location:"Nowhere", device_id:i, options:options_dummy}); %>
+            <% } %>
+            
+        </div>
+    </div>
+</main>
+<%- include('./partial/footer', {minimize:nav}); %>
+</body>
+</html>

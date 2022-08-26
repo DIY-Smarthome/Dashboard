@@ -1,0 +1,71 @@
+<%
+    var data = {}
+    switch(device_id) {
+        case "0":
+            device = "meross";
+            data['device_name'] = "Meross";
+            data['device_id'] = device_id;
+            data['device_type'] = "4-Port Power Strip";
+            data['device_location'] = "Living Room";
+            data['outlet_count'] = 4;
+            data['device_outlet'] = {
+                outlet_1: {
+                    name: "Outlet 1 (PC)"
+                },
+                outlet_2: {
+                    name: "Outlet 2 (Charger)"
+                },
+                outlet_3: {
+                    name: "Outlet 3 (Monitor)"
+                },
+                outlet_4: {
+                    name: "Outlet 4 (Monitor)"
+                }
+            };
+            data['device_monitor'] = {
+                available: false
+            };
+            break;
+        case "1":
+            device = "meross"
+            data['device_name'] = "Meross";
+            data['device_id'] = device_id;
+            data['device_type'] = "Smart Power Outlet";
+            data['device_location'] = "Kitchen";
+            data['outlet_count'] = 1;
+            data['monitor_count'] = 1;
+            data['device_outlet'] = {
+                outlet_1: {
+                    name: "Outlet (Coffee Machine)"
+                }
+            };
+            data['device_monitor'] = {
+                available: true,
+                monitor_1: {
+                    title: "Current Usage",
+                    currency: "W"
+                }
+            };
+            break;
+        default:
+            device = "dummy"
+            data['device_name'] = "Dummy";
+            data['device_type'] = "Dummy";
+            data['device_location'] = "Nowhere";
+    }
+%>
+<%- include('./partial/header', {style:"device", minimize:nav}) %>
+<main>
+    <%- include('./partial/navbar', {set_active:"device", minimize:nav}); %>
+    <div class="content_wrapper">
+        <script type="text/javascript" src="/resource/js/chart.js"></script>
+        <script src="/resource/js/device_function.js"></script>
+        <div class="content">
+            <%- include('./partial/devices/'+device, data); %>
+        </div>
+    </div>
+</main>
+
+<%- include('./partial/footer', {minimize:nav}); %>
+</body>
+</html>

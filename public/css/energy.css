@@ -1,0 +1,71 @@
+div.content {
+    display: inline-block;
+}
+
+.energy_module {
+    display: inline-block;
+    background-color: var(--tertiary-bg-color);
+    height: 100%;
+    border-radius: 25px;
+    padding: 15px 15px;
+}
+
+.energy_time_schedule, .energy_usage_control {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.schedule, .usage {
+    margin-top: 15px;
+}
+
+.schedule_list {
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.single_schedule {
+    display: block;
+}
+
+.schedule > .schedule_list:last-child {
+    margin-right: 0px;
+}
+
+option, select, input[type=number] {
+    background-color: var(--secondary-bg-color);
+}
+
+select, input[type=number] {
+    border-style: none;
+}
+
+input[type=number] {
+    width: 100px;
+}
+
+.select_label_from, .select_label_to, .input_ending {
+    display: inline-block;
+}
+
+.select_label_from {
+    width: 86px;
+}
+
+.select_label_to {
+    width: 25px;
+}
+
+.save_button {
+    border: none;
+    cursor: pointer;
+    background-color: var(--button-color);
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.save_button:hover {
+    background-color: #04AA6D;
+}

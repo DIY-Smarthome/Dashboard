@@ -1,0 +1,14 @@
+<footer>
+    <div <% if (minimize == "minimize") { %>id="minimize_footer"<% } %> class="footer-container">
+        <p>By Quisel & Droman1995</p>
+     </div>
+</footer>
+<script>
+    const selectedMode = localStorage.getItem('mode') ? localStorage.getItem('mode') : null;
+    if (selectedMode) {
+        document.documentElement.setAttribute('data-theme', selectedMode);
+        if (selectedMode === 'dark') {
+            document.getElementById('switch_toggle').classList.toggle('active');
+        }
+    }
+</script>

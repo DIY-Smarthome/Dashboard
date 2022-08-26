@@ -1,0 +1,58 @@
+@import url("color.css");
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: var(--secondary-bg-color);
+    display: inline-block;
+}
+  
+.navbar a {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.navbar a img {
+    display: inline-block;
+}
+
+.navbar a p {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.navbar a.active {
+    background-color: var(--navbar-color-active);
+}
+
+.navbar a:hover:not(.active) {
+    background-color: var(--navbar-color-hover);
+}
+
+#hide_element {
+    margin: 0;
+    display: none;
+}
+
+#minimize {
+    height: auto;
+    width: 53px;
+}
+
+#link_device {
+    pointer-events: none;
+}
+
+@media screen and (max-width: 700px) {
+    .navbar {
+        height: auto;
+        width: 53px;
+    }
+
+    .navbar a p {
+        margin: 0;
+        display: none;
+    }
+}

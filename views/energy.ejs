@@ -1,0 +1,48 @@
+<%- include('./partial/header', {style:"energy", minimize:nav}) %>
+<main>
+    <%- include('./partial/navbar', {set_active:"energy", minimize:nav}); %>
+    <div class="content_wrapper">
+        <script src="/resource/js/energy_function.js"></script>
+        <div class="content">
+            <div class="energy_module">
+                <h3>Energy-Management</h3>
+                <div class="energy_time_schedule">
+                    <h4>Time Scheduler</h4>
+                    <div class="schedule">
+                        <p>Meross 4-Port Power Strip</p>
+                        <%- include('./partial/energy/schedule_list', {outlet_name:"Outlet 1 (PC)", outlet_id:"1_1"}); %>
+                        <%- include('./partial/energy/schedule_list', {outlet_name:"Outlet 2 (Charger)", outlet_id:"1_2"}); %>
+                        <%- include('./partial/energy/schedule_list', {outlet_name:"Outlet 3 (Monitor)", outlet_id:"1_3"}); %>
+                        <%- include('./partial/energy/schedule_list', {outlet_name:"Outlet 4 (Monitor)", outlet_id:"1_4"}); %>
+                    </div>
+                    <button class="save_button" onclick="saveSchedule(0)">save schedule config</button>
+                    <div class="schedule">
+                        <p>Meross Smart Power Outlet</p>
+                        <%- include('./partial/energy/schedule_list', {outlet_name:"Outlet (Coffee Machine)", outlet_id:"2_1"}); %>
+                    </div>
+                    <button class="save_button" onclick="saveSchedule(1)">save schedule config</button>
+                </div>
+                <div class="energy_usage_control">
+                    <h4>Usage Control</h4>
+                    <div class="usage">
+                        <p>Meross Smart Power Outlet</p>
+                        <p>Outlet (Coffee Machine)</p>
+                        <label class="input_label" for="usage_input">Turn off at usage lower than:</label>
+                        <input type="number" id="usage_input" name="usage_input">
+                        <p class="input_ending">W</p>
+                    </div>
+                    <button class="save_button" onclick="saveUsage(1)">save usage config</button>
+                </div>
+            </div> 
+            <script>
+                getSchedule(0);
+                getSchedule(1);
+                getUsage(1);
+            </script>   
+        </div>
+    </div>
+</main>
+
+<%- include('./partial/footer', {minimize:nav}); %>
+</body>
+</html>

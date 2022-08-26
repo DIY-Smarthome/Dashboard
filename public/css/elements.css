@@ -1,0 +1,74 @@
+.general_label {
+    width: 246px;
+    display: inline-block;
+}
+
+/* empty */
+.empty_element {
+    display: block;
+    margin: 7px 0 7px 0;
+}
+
+/* numeric display */
+.value_field, .value_currency {
+    display: inline-block;
+}
+
+/* switch */
+.switch_control {
+    display: block;
+    margin: 7px 0 7px 0;
+}
+
+.switch_label:after {
+    content: ": ";
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 19px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #df4242;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+  
+input:checked + .slider {
+    background-color: #28f321;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
+}

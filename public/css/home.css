@@ -1,0 +1,23 @@
+div.content {
+    display: inline-block;
+}
+
+.energy_module, .device_module {
+    display: inline-block;
+    background-color: var(--tertiary-bg-color);
+    width: 356px;
+    margin-bottom: 10px;
+    height: 170px;
+    border-radius: 25px;
+    padding: 15px 15px;
+    text-align: left;
+}
+
+a:link, a:visited, a:hover, a:active{
+	color: var(--font-color);
+	text-decoration: none;
+}
+
+.device_module_content {
+    margin-top: 10px;
+}

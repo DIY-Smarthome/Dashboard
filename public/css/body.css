@@ -1,0 +1,101 @@
+@import url("color.css");
+
+* {
+	font-family: Verdana, sans-serif;
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    display: flex;
+    flex-flow: column;
+}
+
+/*Style for 300px less more
+@media only screen and (max-width: 300px) {
+    header, footer, main {
+        width: calc(100% - 20%);
+        margin: auto;
+    }
+}
+
+/*Style for 1400px and more
+@media only screen and (min-width: 1400px) {
+    header, footer, main {
+        width: 1400px;
+        margin: auto;
+    }
+}*/
+
+header, footer {
+    display: block;
+    background-color: var(--secondary-bg-color);
+    flex: 0 1 auto;
+}
+
+main {
+    display: -webkit-flex; /* Safari */     
+    display: flex; /* Standard */
+    flex: 1 1 auto;
+}
+
+div.content_wrapper {
+    margin: 7px 7px 0 7px;
+    display: inline-block;
+    -webkit-flex: 1; /* Safari */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* Standard */
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+div.footer-container {
+    display: inline-block;
+    padding-left: 207px;
+    padding-top: 15.5px;
+    padding-bottom: 15.5px;
+}
+
+div.header-container {
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-left: 161px;
+}
+
+#minimize_header {
+    padding-left: 14px;
+}
+
+#minimize_footer {
+    padding-left: 60px;
+}
+
+@media screen and (max-width: 700px) {
+    div.footer-container {
+        padding-left: 60px;
+    }
+
+    div.header-container {
+        padding-left: 14px;
+    }
+}

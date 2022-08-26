@@ -1,0 +1,5 @@
+<div <% if (minimize == "minimize") { %>id="minimize"<% } %>class="navbar">
+    <a id="link_home" <% if (set_active == "home") { %>class="active"<% } %> href="/<% if (minimize == "minimize") { %>?nav=minimize<% } %>"><img src="/resource/pic/home.png" height="20" width="20"><p <% if (minimize == "minimize") { %>id="hide_element"<% } %> class="burger_control">Home</p></a>
+    <a id="link_device" <% if (set_active == "device") { %>class="active"<% } %> ><img src="/resource/pic/device.png" height="20" width="20"><p <% if (minimize == "minimize") { %>id="hide_element"<% } %> class="burger_control">Device</p></a>
+    <a id="link_energy" <% if (set_active == "energy") { %>class="active"<% } %>href="/energy<% if (minimize == "minimize") { %>?nav=minimize<% } %>"><img src="/resource/pic/energy.png" height="20" width="20"><p <% if (minimize == "minimize") { %>id="hide_element"<% } %> class="burger_control">Energy</p></a>
+</div>

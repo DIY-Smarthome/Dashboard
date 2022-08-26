@@ -1,0 +1,13 @@
+<div class="numeric_display">
+    <label class="general_label">
+        <%= options['name'] %>
+    </label>
+    <p class="value_field" id="<%= device_id %>_<%= options['space_id'] %>">0.0</p>
+    <p class="value_currency" ><%= options['value_currency'] %></p>
+    <script>
+        getCurrentUsage("<%= device_id %>", "<%= options['space_id'] %>");
+        setInterval(function() {
+            getCurrentUsage("<%= device_id %>", "<%= options['space_id'] %>");
+		}, 2000);
+    </script>
+</div>

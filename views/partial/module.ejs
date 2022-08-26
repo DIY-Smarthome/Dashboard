@@ -1,0 +1,21 @@
+<div class="device_module">
+    <a href="" id="link_<%= device_id %>" class="link_to_device">
+        <h3><%= device_name %></h3>
+        <h4><%= device_type %></h4>
+        <h5>Location: <%= device_location %></h5>
+    </a>
+    <script>
+        modify_link = document.getElementById("link_<%= device_id %>");
+        modify_link.setAttribute('href', createUrlWithMinimizedNavbar("/device", "device_id" ,"<%= device_id %>"));
+    </script>
+    <div class="device_module_content">
+        <div class="module_content">
+            <% for (var i =1; i <=4;  i++ ) {
+                if (options['space_'+i]['disable'] == true) { %>
+                    <%- include('./elements/empty_element'); %>
+                <% } else { %>
+                    <%- include('./elements/'+options['space_'+i]['space_type'], {device_id: device_id, options:options['space_'+i]['options']}); %>
+                <% } } %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="switch_control">
+    <label class="general_label">
+        <%= options['name'] %>
+    </label>
+    <label class="switch">
+        <input type="checkbox" id="<%= device_id %>_<%= options['space_id'] %>">
+        <span class="slider"></span>
+    </label>
+    <script>
+        checkOutletStatus("<%= device_id %>", "<%= options['space_id'] %>");
+        setInterval(function() {
+            checkOutletStatus("<%= device_id %>", "<%= options['space_id'] %>");
+		}, 2000);
+    </script>
+</div>
