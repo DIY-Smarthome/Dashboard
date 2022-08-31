@@ -3,6 +3,7 @@ const express = require("express");
 //const crypto = require("crypto");
 //const fs = require('fs');
 const cors = require('cors');
+const path = require('path')
 
 const app = express();
 //some lines are commented out
@@ -56,7 +57,7 @@ app.use(cors());
 });*/
 
 //static route for resources like pictures and css
-app.use('/resource', express.static('public'));
+app.use('/resource', express.static(path.join(__dirname, 'public')));
 
 //Router
 const api_router = require('./router/api_router');
@@ -64,6 +65,7 @@ app.use('/api', api_router);
 
 const site_router = require('./router/site_router');
 app.get('*', site_router);
+app.set('views', path.join(__dirname, 'views/'));
 
 //var server_https = https.createServer (options, app);
 

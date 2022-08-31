@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ESNext",
+		"sourceMap": true,
+		"outDir": "./dist/",
+		"downlevelIteration": true,
+		"allowJs": true,
+		"checkJs": false
+	},
+	"exclude": [
+		"node_modules"
+	],
+	"include": ["server.js", "views/*", "public/*"]
+}

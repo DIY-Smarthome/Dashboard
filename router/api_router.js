@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const Eventhandler = require('../lib/EventHandler/dist/Eventhandler');
+const Eventhandler = require('../lib/EventHandler/dist/Eventhandler').default;
 
 /*const bcrypt = require('bcryptjs');
 const uuid = require('uuid');
@@ -125,7 +125,7 @@ router.get('/user', userMiddleware.isLoggedIn, (req, res, next) => {
 router.post('/device', async (req, res, next) => {
     let request_object = req.body;
     let device_type;
-
+    let outlet_id = 0;//FIXME
     switch (request_object['device_id']) {
         case 1:
             device_type = "mss425f";
@@ -170,7 +170,7 @@ router.post('/energy', async (req, res, next) => {
         }
     } else if (request_object['get_usage'] == true) {
         let response = await eh.request("get_energy_usage", {request_object});
-        res.send({usage: response['saved_usage']});
+        res.send({usage: response.getContentsFlat()[0]});
     } else if (request_object['get_schedule'] == true) {
         let response = await eh.request("get_energy_schedule", {request_object});
         res.send(response);
