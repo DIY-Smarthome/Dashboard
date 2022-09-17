@@ -78,8 +78,8 @@ As in this PoC-State, this software may have several bugs and problems.
 
 ### Built With
 
-* [![JavaScript][javascript.com]][JavaScript-url]
-* [![EJS][ejs.co]][EJS-url]
+* https://www.javascript.com/etc.clientlibs/pluralsight/clientlibs/clientlib-main/resources/images/js-logo.png
+* https://ejs.co/favicon.svg
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
