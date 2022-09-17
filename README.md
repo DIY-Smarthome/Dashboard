@@ -78,7 +78,8 @@ As in this PoC-State, this software may have several bugs and problems.
 
 ### Built With
 
-* [![TypeScript][TypeScript.org]][TypeScript-url]
+* [![JavaScript][javascript.com]][JavaScript-url]
+* [![EJS][ejs.co]][EJS-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
