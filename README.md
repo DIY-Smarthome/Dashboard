@@ -67,9 +67,9 @@
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
 The proof of concept was achieved with the protoype that was submitted as an university exam.
-Currently this Dashboard can connect to the kernel an get some data from the meross-module. 
+Currently this Dashboard can connect to the kernel and get some data from the meross-module. 
 This function is programmed statically, a dynamic implementation and controlling of modlues and devices is not programmed.
-Further developments schould add a dynamic structur for adding and removing modules/devices and controlling them.
+Further developments should add a dynamic structur for adding and removing modules/devices and controlling them.
 As in this PoC-State, this software may have several bugs and problems.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -103,7 +103,7 @@ You will need NodeJs and npm to use this module.
 2. Enter the lib folder
 3. Clone the module
     ```sh
-   git clone https://github.com/DIY-Smarthome/MerossDeviceHandler.git
+   git clone https://github.com/DIY-Smarthome/Dashboard.git
    ```
 4. Install NPM packages
    ```sh
